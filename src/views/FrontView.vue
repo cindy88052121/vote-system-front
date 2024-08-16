@@ -7,9 +7,9 @@
                     type="text" 
                     id="voterName" 
                     class="form-control mt-3" 
-                    v-model="voterName" 
+                    v-model="voterName"
+                    maxlength="50"
                     placeholder="請輸入投票人名稱"
-                    required
                 />
                 
                 <table class="table table-striped mt-3">
@@ -58,6 +58,10 @@ export default {
     },
     methods: {
         submitVotes() {
+            if (this.voterName === '') {
+                alert("請輸入投票人名稱");
+                return;
+            }
             if (this.selectedItems.length === 0) {
                 alert("請至少選擇一個項目");
                 return;
@@ -91,6 +95,7 @@ function vote($this) {
             }
             findAll($this);
             $this.selectedItems = [];
+            $this.voterName = "";
         })
         .catch(error => {alert(error.message)}); 
 }
