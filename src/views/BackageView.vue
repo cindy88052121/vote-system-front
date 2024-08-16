@@ -3,13 +3,13 @@
         <div class="container mt-5">
             <h2>投票項目管理</h2>
 
-            <!-- 新增物品的表單 -->
+            <!-- 新增項目的表單 -->
             <div class="input-group mb-3">
                 <input type="text" class="form-control" v-model="newVoteItemName" maxlength="50" placeholder="請輸入項目名稱">
                 <button class="btn btn-success" @click="addVoteItem">新增</button>
             </div>
 
-            <!-- 物品清單 -->
+            <!-- 項目清單 -->
             <table class="table table-bordered">
                 <thead>
                     <tr>
